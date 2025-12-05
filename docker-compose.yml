@@ -1,7 +1,7 @@
 services:
   # run jupyter notebook inside jupyter
   jupyter-notebook:
-    # image:  shreyakakachery/dsci-522-individual-assignment-quarto-python:latest
+    # image:  shreyakakachery/dsci-522-individual-assignment-quarto-python:test123
     build: .
     ports:
       - "8888:8888"

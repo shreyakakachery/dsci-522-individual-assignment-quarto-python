@@ -47,7 +47,7 @@ jobs:
       - name: Update docker-compose.yml with new image tag
         if: success()
         run: |
-          sed -i "s|image:  ttimbers/dsci-522-individual-assignment-quarto-python:.*|image:  ttimbers/dsci-522-individual-assignment-quarto-python:${{ steps.meta.outputs.version }}|" docker-compose.yml
+          sed -i "s|image:  shreyakakachery/dsci-522-individual-assignment-quarto-python:.*|image:  shreyakakachery/dsci-522-individual-assignment-quarto-python:${{ steps.meta.outputs.version }}|" docker-compose.yml
 
       - name: Commit and push updated docker-compose.yml
         if: success()
@@ -55,5 +55,6 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add docker-compose.yml
-          git commit -m "Update docker-compose.yml with new image tag"
+          git commit -m "Update docker-compose.yml with new image tag ${{ steps.meta.outputs.version }}"
           git push
+          
